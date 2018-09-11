@@ -9,4 +9,4 @@ class Tokenizer:
         jieba.initialize()
 
     def cut(self,sentence):
-        jieba.cut(sentence,)
+        jieba.cut(sentence)
