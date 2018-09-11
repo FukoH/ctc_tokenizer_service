@@ -6,7 +6,7 @@ import os
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'hard to guess string'
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
-
+    DICT_PATH = 'ctc_dict.txt'
     @staticmethod
     def init_app(app):
         pass

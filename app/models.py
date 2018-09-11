@@ -1,8 +1,11 @@
 
-
+from flask import current_app
 from sqlalchemy import Column, Integer, String
 from . import db
+import jieba
 
+jieba.load_userdict(current_app.config['DICT_PATH'])
+jieba.initialize()
 
 class Vocabulary(db.Model):
 
@@ -23,4 +26,7 @@ class Vocabulary(db.Model):
             'type':self.type,
             'sub_type':self.sub_type
         }
+
+    def __init__(self,sentence):
+        jieba.cut(sentence)
 
