@@ -4,7 +4,6 @@ from . import main
 
 @main.app_errorhandler(404)
 def page_not_found(e):
-    #TODO 返回错误码
     return render_template('404.html'), 404
 
 
